@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TestInQtClass</class>
+ <widget class="QMainWindow" name="TestInQtClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>719</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>TestInQt</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="ReadPic">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>350</y>
+      <width>72</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>载入</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>10</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Agency FB</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>当前状态：</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="PicClear">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>350</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>清空</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="PicShowPlace">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>400</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+border-style: solid;
+border-color: rgb(100, 100, 100);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SavePic">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>350</y>
+      <width>72</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>保存</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="GrayPic">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>20</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>灰度化</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TxtShowPlace">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>10</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Agency FB</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>没有图片！</string>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>70</y>
+      <width>291</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>289</width>
+       <height>49</height>
+      </rect>
+     </property>
+     <widget class="QComboBox" name="GrayChangeType">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>10</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="currentText">
+       <string>对数变换</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>对数变换</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>幂变换</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>反转</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="GrayTypeLine">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>SimSun-ExtB</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(225, 225, 225);
+border-width: 1px;
+border-style: solid;
+border-color: rgb(225, 225, 225);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>0</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Agency FB</family>
+        <pointsize>7</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>参数大小:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="GrayChange">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>灰度变换</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="ReturnPic">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>350</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>返回</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="RestorePic">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>350</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>复原</string>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea_2">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>130</y>
+      <width>291</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>289</width>
+       <height>49</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>0</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Agency FB</family>
+        <pointsize>7</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>模板大小:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="DeNoiceType">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>10</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <item>
+       <property name="text">
+        <string>均值滤波</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>中值滤波</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="DeNoice">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>去除噪声</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="DeNoTypeLine">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>SimSun-ExtB</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(225, 225, 225);
+border-width: 1px;
+border-style: solid;
+border-color: rgb(225, 225, 225);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="BinPic">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>20</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>二值化</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="BinaryValue">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>30</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>SimSun-ExtB</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(225, 225, 225);
+border-width: 1px;
+border-style: solid;
+border-color: rgb(225, 225, 225);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea_3">
+    <property name="geometry">
+     <rect>
+      <x>545</x>
+      <y>10</y>
+      <width>166</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>164</width>
+       <height>49</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>0</y>
+        <width>31</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Agency FB</family>
+        <pointsize>7</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>  阈值:</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea_4">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>190</y>
+      <width>291</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>289</width>
+       <height>49</height>
+      </rect>
+     </property>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>0</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Agency FB</family>
+        <pointsize>7</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>模板大小:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="FormTypeLine">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>SimSun-ExtB</family>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(225, 225, 225);
+border-width: 1px;
+border-style: solid;
+border-color: rgb(225, 225, 225);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="FormCount">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>111</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>形态运算</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="FormType">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>10</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>开运算</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>闭运算</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>腐蚀</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>膨胀</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>顶帽变换</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>底帽变换</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>原图-底帽</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>原图+顶帽</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="OneStep">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>270</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>一键增强</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Identify">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>270</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>截图</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>250</y>
+      <width>291</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="IdentifyText">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>310</y>
+      <width>291</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>SimSun-ExtB</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(225, 225, 225);
+border-width: 1px;
+border-style: solid;
+border-color: rgb(225, 225, 225);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>270</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>识别文字</string>
+    </property>
+   </widget>
+   <zorder>scrollArea_4</zorder>
+   <zorder>scrollArea_3</zorder>
+   <zorder>scrollArea_2</zorder>
+   <zorder>scrollArea</zorder>
+   <zorder>ReadPic</zorder>
+   <zorder>label</zorder>
+   <zorder>PicClear</zorder>
+   <zorder>PicShowPlace</zorder>
+   <zorder>SavePic</zorder>
+   <zorder>GrayPic</zorder>
+   <zorder>TxtShowPlace</zorder>
+   <zorder>ReturnPic</zorder>
+   <zorder>RestorePic</zorder>
+   <zorder>BinPic</zorder>
+   <zorder>BinaryValue</zorder>
+   <zorder>OneStep</zorder>
+   <zorder>Identify</zorder>
+   <zorder>line</zorder>
+   <zorder>IdentifyText</zorder>
+   <zorder>pushButton</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>719</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>图像处理</string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="TestInQt.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>ReadPic</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>ReadPic_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>10</x>
+     <y>425</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>31</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PicClear</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>PicClear_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>401</x>
+     <y>402</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>462</x>
+     <y>406</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GrayPic</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>GrayPic()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>497</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>568</x>
+     <y>72</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>GrayChange</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>GrayChange()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>512</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>605</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SavePic</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>SavePic_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>405</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>354</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ReturnPic</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>ReturnPic_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>219</x>
+     <y>397</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>298</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RestorePic</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>RestorePic_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>299</x>
+     <y>407</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>422</x>
+     <y>382</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>DeNoice</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>DeNoice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>487</x>
+     <y>217</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>606</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>BinPic</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>BinImg()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>596</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>680</x>
+     <y>69</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FormCount</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>FormCount()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>483</x>
+     <y>276</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>610</x>
+     <y>252</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>OneStep</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>OneStep()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>491</x>
+     <y>346</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>611</x>
+     <y>311</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Identify</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>screenshot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>584</x>
+     <y>328</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>TestInQtClass</receiver>
+   <slot>recognize()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>656</x>
+     <y>337</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>665</x>
+     <y>348</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>ReadPic_Clicked()</slot>
+  <slot>PicClear_Clicked()</slot>
+  <slot>GrayPic()</slot>
+  <slot>GrayChange()</slot>
+  <slot>SavePic_Clicked()</slot>
+  <slot>RestorePic_Clicked()</slot>
+  <slot>ReturnPic_Clicked()</slot>
+  <slot>DeNoice()</slot>
+  <slot>BinImg()</slot>
+  <slot>FormCount()</slot>
+  <slot>OneStep()</slot>
+  <slot>recognize()</slot>
+  <slot>screenshot()</slot>
+ </slots>
+</ui>
